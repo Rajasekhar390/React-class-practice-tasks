@@ -22,6 +22,7 @@ const Seventh = () => {
     console.log(list);
     return (
         <div className='container mt-3'>
+            <h3>Search in Table Rendering</h3>
             <div >
                 <div>
                     <div >

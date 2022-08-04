@@ -1,56 +1,79 @@
 import React, { useState } from 'react'
 
-const Twelfth = () => {
-  const [state, setState] = useState({
+const Twelve = () => {
+  // let enteredText = 'Super Man Bat Man Spider Man';
+  const [data, setData] = useState({
     string: '',
-    displayMsg: '',
-    arr: [],
-    obj:{}
+    list: [],
+    repeat: [],
+    length1: [],
+    message: '',
   })
-   const [obj, setObj] = useState("");
-  const { string, displayMsg, arr } = state
+  const { message, string, list, repeat, length1 } = data
   const handleInput = (e) => {
-    setState({ ...state, string: e.target.value, displayMsg: '' })
+    setData({ ...data, string: e.target.value, message: '', repeat: [] })
   }
-  let count = 0,
-    string1
-  const ShowData = (e) => {
-    e.preventDefault()
-    string1 = string.split(' ')
-    for (let i = 0; i < string1.length; i++) {
-      count = 0
-      for (let j = 0; j < string1.length; j++) {
-        if (string1[i] == string1[j]) {
-          count++
+
+  let arr = string.toLowerCase().split(' ');
+  const submitFn = (e) => {
+    e.preventDefault();
+    let duplicates = []
+    let repeatWords = []
+    if (string) {
+      for (let i = 0; i <= arr.length - 1; i++) {
+        if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+          duplicates.push(arr[i])
         }
       }
-      if (count > 1) {
-        arr.push(string1[i])
-        setState({ ...state, arr, displayMsg: '' })
-        
+      for (let i = 0; i <= duplicates.length - 1; i++) {
+        let word = duplicates[i]
+        if (repeatWords.includes(word)) {
+
+        } else {
+          repeatWords.push(word)
+        }
       }
     }
+    setData({ ...data, list: duplicates, repeat: repeatWords })
   }
-  return (
-    <div>
-      <div >
-        <form>
-          <input
-            type="text"
-            name="number"
-            value={string}
-            onChange={handleInput}
-          />
+  const getCount = (item) => {
+    const data = list.filter(x => x == item)
+    return data.length
+  }
 
-          <button onClick={ShowData}>click</button>
-        </form>
-        {displayMsg && <p>{displayMsg}</p>}
-        {arr.map((item) => {
-          return <p>{item}</p>
-        })}
+  return (
+    <div className='container mt-3'>
+      <div className='row'>
+        <div className='col-md-4'>
+          <div>
+            <h3 className='text-warning'>Duplicate Words</h3>
+            <div >
+              <form>
+                <input
+                  type="text"
+                  name='string'
+                  value={string}
+                  onChange={handleInput}
+                  placeholder={'Enter Duplicate Words'}
+                />
+                <div className='mt-3'>
+                  <button className='btn btn-warning' onClick={submitFn}>submit</button>
+                </div>
+              </form>
+              {
+                repeat &&
+                repeat.map((item, index) => {
+                  return (
+                    <li key={index} style={{ listStyleType: 'none' }}>{item} : {getCount(item)}</li>
+                  )
+                })
+              }
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Twelfth;
+export default Twelve

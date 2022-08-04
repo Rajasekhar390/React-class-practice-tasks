@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Duplicate from './Components/others/duplicate'
 import Tenth from './Components/twelve-tasks/10_task'
 import Eleventh from './Components/twelve-tasks/11_task'
-import Twelfth from './Components/twelve-tasks/12_task'
+import Twelve from './Components/twelve-tasks/12_task'
 import First1 from './Components/twelve-tasks/1_task'
 import Second from './Components/twelve-tasks/2_task'
 import Third from './Components/twelve-tasks/3_task'
@@ -29,7 +30,8 @@ const AppRoutes = () => {
         <Route path='nine' element={< Ninth />} />
         <Route path='ten' element={< Tenth />} />
         <Route path='eleven' element={<Eleventh />} />
-        <Route path='twelve' element={< Twelfth />} />
+        <Route path='twelve' element={< Twelve />} />
+        <Route path='duplicate' element={< Duplicate />} />
 
       </Routes>
     </Router>

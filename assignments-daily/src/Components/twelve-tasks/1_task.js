@@ -28,6 +28,7 @@ const First1 = () => {
 
     return (
         <div>
+          <h3>  Convert Dollar to Indian Rupee </h3>
             <label htmlFor="dollor"> <b> Amount ($):</b></label>
             <input type="text" placeholder='$' value={value} onChange={handleInputChange} onKeyPress={allowOnlyNumbers} />
             {

@@ -28,6 +28,7 @@ const Fifth = () => {
     return (
         <div>
             <div className="container">
+                <h3>Table Rendering</h3>
                 <div className="row">
                     <div className="col-sm-8">
                         <input type="text" onChange={handleChange} value={test.name} name="name" className="form-control" placeholder="Name" />

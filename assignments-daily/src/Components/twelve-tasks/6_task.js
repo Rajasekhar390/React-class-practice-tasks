@@ -11,6 +11,7 @@ const Sixth = () => {
 
   return (
     <div className='container'>
+     
       <h5><b className='text-danger'> Trim the Input Field</b></h5>
       <div className='mt-3'>
         <label htmlFor="password"><b> Password:</b></label>

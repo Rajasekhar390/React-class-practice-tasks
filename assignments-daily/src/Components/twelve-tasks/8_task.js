@@ -38,7 +38,7 @@ const Eighth = () => {
                             <h3>Find clear number</h3>
                         </div>
                         <div >
-                            <form onSubmit={submitFn}>
+                            <form >
                                 <input
                                     type="text"
                                     name='number'
@@ -46,11 +46,9 @@ const Eighth = () => {
                                     onChange={handleInput}
                                     placeholder={'Enter any number'}
                                 />
-                                <input
-                                    type="submit"
-                                    className='btn btn-secondary mb-3'
-                                    value='submit'
-                                />
+                                <div className='mt-3'>
+                                    <button className='btn btn-warning' onClick={submitFn}>submit</button>
+                                </div>
                             </form>
                             {
                                 displayMsg &&
