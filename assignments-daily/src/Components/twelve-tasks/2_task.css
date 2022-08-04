@@ -1,0 +1,33 @@
+.bg {
+    background-color: rgb(255, 196, 0);
+    width: 500px;
+    padding-top: 10px;
+}
+
+.posRel {
+    position: relative;
+}
+
+.posAbs {
+    position: absolute;
+    left: 107px;
+    top: 3px;
+}
+
+.posRel1 {
+    position: relative;
+}
+
+.posAbs1 {
+    position: absolute;
+    left: 104px;
+    top: 3px;
+}
+
+.redIcon {
+    background-color: red;
+}
+
+.greenIcon {
+    background-color: green;
+}
